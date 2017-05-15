@@ -1,4 +1,4 @@
-local Back = 6
+local Back = 1
 local success, down = turtle.inspectDown()
   local depth = 0
   for x = 1,8 do
@@ -12,6 +12,7 @@ for x = 1,5 do
     turtle.down()
     sucess,down = turtle.inspectDown()  
     depth = depth + 1
+    Back = Back + 1
   end  
   for x = 1,depth do
     turtle.up()
@@ -20,15 +21,13 @@ for x = 1,5 do
   turtle.dig()
   turtle.forward()
 end
- 
- 
 for x = 1, Back do
   turtle.back()
 end
-function PutAway()
+local function PutAway()
   for inventory = 1,16 do
     turtle.select(inventory)
     turtle.dropDown()
   end
-PutAway()
 end
+PutAway()
